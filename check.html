@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+您的爱好很广泛！！！<br>
+<input type="checkbox" name="checkitems" value="checkitems" id="selectan"/>全选／全不选<br>
+<input type="checkbox" name="items" value="足球" />足球
+<input type="checkbox" name="items" value="篮球" />蓝球
+<input type="checkbox" name="items" value="游泳" />游泳
+<input type="checkbox" name="items" value="唱歌" />唱歌<br>
+<input type="button" name="" id="checkall" value="全选">
+<input type="button" name="" id="checkallno" value="全不选">
+<input type="button" name="" id="check_reverse" value="反选">
+</body>
+<script language="JavaScript">
+    window.onload = function () {
+        var checkallElement = document.getElementById("checkall");
+        checkallElement.onclick = function () {
+            var itemsElements = document.getElementsByName("items");
+            for(var x = 0; x < itemsElements.length; x++){
+                itemsElements[x].setAttribute("checked","checked");
+            }
+        }
+    }
+
+    var checkallnoElement = document.getElementById("checkallno");
+    checkallnoElement.onclick = function () {
+        var itemsElements = document.getElementsByName("items");
+        for(var x = 0; x < itemsElements.length; x++){
+            itemsElements[x].checked = null;
+        }
+    }
+
+    var checkreverseElement = document.getElementById("check_reverse");
+    checkreverseElement.onclick = function () {
+        var itemsElements = document.getElementsByName("items");
+        for(var x = 0; x < itemsElements.length; x++){
+            if(itemsElements[x].checked){
+                itemsElements[x].checked = null;
+            }else{
+               itemsElements[x].checked = "checked";
+            }
+        }
+    }
+
+    var selectanElement = document.getElementById("selectan");
+        selectanElement.onclick = function () {
+                var itemsElements = document.getElementsByName("items");
+                for(var x = 0; x < itemsElements.length; x++){
+                    if(this.checked){
+                        itemsElements[x].checked = "checked";
+                    }else{
+                        itemsElements[x].checked = null;
+                    }
+                }
+
+
+        }
+
+</script>
+</html>
